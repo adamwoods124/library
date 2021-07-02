@@ -31,6 +31,7 @@ displayBook = (book) => {
 
   let btn = document.createElement("button");
   btn.textContent = "Delete";
+  btn.className = "btn2";
   btn.onclick = function () {
     for (let i = 0; i < lib.length; i++) {
       lib[i].index = i;
@@ -42,6 +43,7 @@ displayBook = (book) => {
   card.appendChild(btn);
 
   let btn2 = document.createElement("button");
+  btn2.className = "btn2";
   btn2.textContent = "Toggle Read";
   btn2.onclick = function () {
     book.toggleRead();
