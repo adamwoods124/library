@@ -44,13 +44,7 @@ displayBook = (book) => {
   let btn2 = document.createElement("button");
   btn2.textContent = "Toggle Read";
   btn2.onclick = function () {
-    if (book.read == "not read") {
-      book.read = "read";
-    } else {
-      book.read = "not read";
-    }
-    container.innerHTML = "";
-    displayLib();
+    book.toggleRead();
   };
   card.appendChild(btn2);
 
@@ -72,6 +66,16 @@ addBook = () => {
   const book = new Book(title, author, pgs, read);
   adLib(book);
   displayBook(book);
+};
+
+Book.prototype.toggleRead = function () {
+  if (this.read == "not read") {
+    this.read = "read";
+  } else {
+    this.read = "not read";
+  }
+  container.innerHTML = "";
+  displayLib();
 };
 
 const book1 = new Book("1", "1", "1", "read");
